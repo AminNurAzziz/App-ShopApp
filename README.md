@@ -1,10 +1,9 @@
 # Shop App - Aplikasi Belanja Flutter
 
-Aplikasi Belanja Flutter ini adalah contoh proyek yang dibuat untuk membantu Anda memahami pengembangan aplikasi mobile dengan menggunakan Flutter. Aplikasi ini memiliki berbagai fitur yang mencakup manajemen produk, keranjang belanja, pemesanan, dan lainnya.
+Aplikasi Belanja Flutter ini adalah contoh proyek yang dibuat untuk membantu Anda memahami pengembangan aplikasi mobile dengan menggunakan Flutter. Aplikasi ini memiliki berbagai fitur.
 
 
 ## Implementasi
-
 - Custom Fonts
 - Theming, Color Scheme
 - SafeArea Widget
@@ -16,6 +15,7 @@ Aplikasi Belanja Flutter ini adalah contoh proyek yang dibuat untuk membantu And
 - Spacer and Flex Widget
 - Navigation & Routing
 - BottomNavigationBar Widget
+- IndexedStack Widget (for move page)
 - ListTile Widget
 - State Management with Provider
 
