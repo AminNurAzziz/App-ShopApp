@@ -8,7 +8,8 @@ class CartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cart = Provider.of<CartProvider>(context).cart;
+    // final cart = Provider.of<CartProvider>(context).cart;
+    final cart = context.watch<CartProvider>().cart;
     return Scaffold(
         appBar: AppBar(title: const Text('sadsda')),
         body: ListView.builder(
@@ -21,7 +22,41 @@ class CartPage extends StatelessWidget {
                 radius: 30.0,
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text(
+                          'Delete Product',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        content: Text(
+                          'Are you sure want to delete this product?',
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              context
+                                  .read<CartProvider>()
+                                  .removeFromCart(cartItem);
+                              Provider.of<CartProvider>(context, listen: false)
+                                  .removeFromCart(cartItem);
+                              Navigator.pop(context);
+                            },
+                            child: const Text('Remove'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
                 icon: const Icon(
                   Icons.delete,
                   color: Colors.red,
